@@ -32,7 +32,7 @@ int main()
         for(j = 0; j < 5; j++)
         {
             scanf("%d", &s[i].marks[j]);
-            total += s[i].marks[j];
+            total =total+s[i].marks[j];
         }
 
         s[i].percentage = total / 5.0;
