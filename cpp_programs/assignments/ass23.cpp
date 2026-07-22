@@ -8,6 +8,7 @@ class Student
   char grade;
 
   public:
+  //Default Ctor
    Student()
    {
      name="the man has no name";
@@ -16,6 +17,7 @@ class Student
     grade='F';
 
    }
+   //Parameterised Ctor
    Student(std::string s,int roll,float per)
    {
     name=s;
@@ -33,6 +35,7 @@ class Student
     else
        grade='F';            
    }
+   //Copy Ctor
    Student(Student &S)
    {
      name=S.name;
@@ -68,6 +71,7 @@ class Student
    {
     return percent;
    }
+   //Destructor
    ~Student(){}
 };
 
@@ -111,5 +115,4 @@ int main()
     }
 
     return 0;
-
 }
