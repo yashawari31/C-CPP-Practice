@@ -4,7 +4,7 @@ using namespace std;
 class Demo
 {
 private:
-    static int a, b;
+    int a, b;
 
 public:
     // Parameterized Constructor
@@ -17,18 +17,22 @@ public:
     // Default Constructor
     Demo()
     {
+        a=0;
+        b=0;
+    }
+    void show()
+    {
         cout << "Value of a = " << a << endl;
         cout << "Value of b = " << b << endl;
     }
 };
 
-int Demo::a = 0;
-int Demo::b = 0;
 
 int main()
 {
     Demo d1(10, 20);   // Parameterized constructor sets values
-    Demo d2;           // Default constructor displays values
-
+    Demo d2;           // Default constructor 
+     d1.show();
+     d2.show();
     return 0;
 }
