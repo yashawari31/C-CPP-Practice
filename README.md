@@ -50,6 +50,7 @@ CPP/
 - Member Functions
 - Static Data Members & Functions
 - Function Overloading
+- Operator Overloading
 - Inheritance
 - Polymorphism
 - Practical Assignments
