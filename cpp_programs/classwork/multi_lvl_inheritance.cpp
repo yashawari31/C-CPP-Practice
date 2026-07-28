@@ -23,6 +23,9 @@ class Employee
       }
 };
 
+
+//class Manager inherited from class Employee
+
 class Manager: protected Employee
 {
     protected:
@@ -43,6 +46,8 @@ class Manager: protected Employee
         std::cout<<"Department:\t"<<department<<"\n"<<std::endl;
     }
 };
+
+//class SeniorManager inherited from class Manager
 
 class SeniorManager: protected Manager
 {
@@ -65,6 +70,8 @@ class SeniorManager: protected Manager
         std::cout<<"Years of Experience:\t"<<yearofexperience<<std::endl;
      }
 };
+
+//main function starts
 
 int main()
 {
