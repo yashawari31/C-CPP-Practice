@@ -25,7 +25,7 @@ class Car:public Vehicle
     fare=hrs*300+rate;
     std::cout<<"Estimated fare cost by Car is:\tRs."<<fare<<"\t for"<<hrs<<"hrs"<<std::endl;
   }
-  void Calculatefare(double km)
+  void Calculatefare(float km)
   {
     fare=50*km+rate;
     std::cout<<"Estimated fare cost by Car is:\tRs."<<fare<<"\t for"<<km<<"km"<<std::endl;
@@ -46,7 +46,7 @@ class Bike:public Vehicle
         std::cout<<"Estimated fare cost by bike is:\tRs."<<fare<<"\t for"<<hrs<<"hrs"<<std::endl;
 
     }
-    void Calculatefare(double km)
+    void Calculatefare(float km)
     {
         fare=25*km+rate;
         std::cout<<"Estimated fare cost by bike is:\tRs."<<fare<<"\t for"<<km<<"km"<<std::endl;
@@ -58,11 +58,11 @@ int main()
 {
     Car c1("SUV",2500);
     c1.Calculatefare(7);
-    c1.Calculatefare(90.5);
+    c1.Calculatefare(90.5f);
 
     Bike b1("Cruiser",1000);
     b1.Calculatefare(8);
-    b1.Calculatefare(300.0);
+    b1.Calculatefare(300.0f);
 }
 
 
