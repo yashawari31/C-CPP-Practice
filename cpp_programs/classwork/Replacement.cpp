@@ -81,6 +81,8 @@ class Square:public Quadrilateral
 
 int main()
 {
+    Rectangle r;
+    r.showDetails();
     Rectangle r1(34.5f,25.0f);
     r1.showDetails();
     std::cout<<"Area of Rectangle:\t"<<r1.Area()<<std::endl;
