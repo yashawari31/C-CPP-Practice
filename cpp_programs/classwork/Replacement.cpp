@@ -2,13 +2,13 @@
 #include <math.h>
 
 class Quadrilateral{
-    protected:
+    public:
         float s1,s2,s3,s4;
     
         Quadrilateral():s1(0),s2(0),s3(0),s4(0){std::cout<<"Quadrilateral default constructor invoked"<<std::endl;}
         Quadrilateral(float S1,float S2,float S3,float S4):s1(S1),s2(S2),s3(S3),s4(S4){std::cout<<"Quadrilateral parameterised constructor invoked"<<std::endl;}
 
-        float area(){
+      virtual  float Area(){
             float s  = (s1+s2+s3+s4)/2;
             float area = sqrt((s-s1)*(s-s2)*(s-s3)*(s-s4));
 
@@ -22,7 +22,7 @@ class Quadrilateral{
             std::cout<<"Side:"<<s3;
             std::cout<<"Side:"<<s4;
 
-            std::cout<<"\nArea:\t"<<area()<<std::endl;
+            std::cout<<"\nArea:\t"<<Area()<<std::endl;
         }
 
 };
@@ -41,7 +41,7 @@ class Rectangle:public Quadrilateral
         return (2*length+2*breadth);
     }   
 
-    float Area()
+   virtual float Area()
     {
         return (length*breadth);
     }
@@ -67,7 +67,7 @@ class Square:public Quadrilateral
         return (4*side);
     }   
 
-    float Area()
+   virtual float Area()
     {
         return (side*side);
     }
@@ -81,17 +81,14 @@ class Square:public Quadrilateral
 
 int main()
 {
-    Rectangle r;
-    r.showDetails();
+
     Rectangle r1(34.5f,25.0f);
     r1.showDetails();
-    std::cout<<"Area of Rectangle:\t"<<r1.Area()<<std::endl;
+    Quadrilateral &ref1=r1;
+    std::cout<<"Area of Rectangle:\t"<<ref1.Area()<<std::endl;
     std::cout<<"Perimeter of Rectangle:\t"<<r1.Perimeter()<<std::endl;
 
-    Square s1(25.0f);
-    s1.showDetails();
-     std::cout<<"Area of Square:\t"<<s1.Area()<<std::endl;
-    std::cout<<"Perimeter of Square:\t"<<s1.Perimeter()<<std::endl;
+    
 
     return 0;
 }
