@@ -17,10 +17,10 @@ class Quadrilateral{
         }
 
         void show_sides(){
-              std::cout<<"Side1:"<<s1;  
-            std::cout<<"Side:"<<s2;
-            std::cout<<"Side:"<<s3;
-            std::cout<<"Side:"<<s4;
+            std::cout<<"Side1:"<<s1;  
+            std::cout<<"Side2:"<<s2;
+            std::cout<<"Side3:"<<s3;
+            std::cout<<"Side4:"<<s4;
 
             std::cout<<"\nArea:\t"<<Area()<<std::endl;
         }
