@@ -17,7 +17,8 @@ int main()
     multi_line_read.open("Jon Snow.txt");
 
     std::string read;
-
+    
+    //multi line reading
     while(getline(multi_line_read,read))
     {
         std::cout<<read<<std::endl;

@@ -15,9 +15,13 @@ int main()
     getline(f2,str2);
     f2.close();
 
+    //string comparison
     if(str1==str2)
     {
-        printf("both files contain same data");
+        std::cout<<"both files contain same data"<<std::endl;
+    }
+    else{
+        std::cout<<"both files contain different data"<<std::endl;
     }
     return 0;
 }

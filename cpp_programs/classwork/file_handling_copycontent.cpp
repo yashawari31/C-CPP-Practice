@@ -12,7 +12,7 @@ f1.close();
 std::fstream f2;
 f2.open("stu2.txt");
 
-f2 << str;
+f2<<str;
 
 f2.close();
 
