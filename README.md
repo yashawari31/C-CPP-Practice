@@ -27,7 +27,8 @@ CPP/
 |── Operator Overloading
 │── Inheritance
 │── Polymorphism
-│── Practical Assignments
+│── Destructors
+│──Practical Assignments
 ```
 
 ## 🚀 Topics Covered
