@@ -100,7 +100,7 @@ int main()
         }
     }
 
-    if (!found)
+    if (found!=true)
     {
         std:: cout << "Student not found."<<std::endl;
     }
@@ -114,7 +114,7 @@ int main()
             topper=i;
         }
     }
-    std::cout<<"The Topper Student is:"<<std::endl;
+    std::cout<<"\nThe Topper Student is:"<<std::endl;
     s[topper].display_details();
 
     
