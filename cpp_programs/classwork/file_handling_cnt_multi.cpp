@@ -17,6 +17,7 @@ int main()
     multi_line_read.open("Jon Snow.txt");
 
     std::string read;
+    //variables for counting different terms
     int words_cnt=0;
     int char_cnt=0;
     int lines_cnt=0;

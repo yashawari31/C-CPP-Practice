@@ -1,0 +1,20 @@
+Roll No: 12
+Name: yash awari
+Marks: 99
+----------------------
+Roll No: 12
+Name: amruta karale
+Marks: 45
+----------------------
+Roll No: 8
+Name: harsh khilari
+Marks: 67
+----------------------
+Roll No: 19
+Name: kunal patil
+Marks: 56
+----------------------
+Roll No: 7
+Name: nagesh rodge
+Marks: 23
+----------------------
