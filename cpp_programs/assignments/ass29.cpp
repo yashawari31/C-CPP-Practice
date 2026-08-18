@@ -59,7 +59,7 @@ ostream& operator<<(ostream &out, Matrix &m)
     {
         for (int j = 0; j < m.column; j++)
         {
-            out << m.ptr[i * m.column + j] << " ";
+            out << m.ptr[i * m.column + j] << "\t";
         }
 
         out << endl;
