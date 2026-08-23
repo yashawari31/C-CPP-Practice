@@ -35,6 +35,7 @@ int main()
 {
     Laptop l1("Asus Vivobook",45000.4f,6,"i5");
     l1.displayDetails();
-
+    Laptop l2("Asus Rog",80000.0f,8,"i7");
+    l2.displayDetails();
     return 0;
 }
