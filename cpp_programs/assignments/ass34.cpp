@@ -64,6 +64,7 @@ class Marks:protected Student
         displayDetails();
         std::cout<<"Student Marks: "<<marks<<std::endl;
     }
+    ~Marks(){}
 };
 
 int main()
