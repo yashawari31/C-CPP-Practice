@@ -80,6 +80,8 @@ int main()
     showDetails(E1);
     showDetails(&M1);
 
+    Employee e1;
+    e1.showDetails();
     
 
 }
