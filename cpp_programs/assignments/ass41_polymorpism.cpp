@@ -122,6 +122,6 @@ int main()
         delete(p);
         p=NULL;
     }
-   }
+ }
   return 0;
 }
