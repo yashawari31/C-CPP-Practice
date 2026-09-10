@@ -116,6 +116,17 @@ class AdmissionProcess
     public:
     void registerStudent(Student *student,Course *Course)
     {
+        if(student==NULL)
+        {
+            throw InvalidStudentException();
+        }
+
+        if(Course==NULL)
+        {
+            throw CourseNotFoundException();
+        }
+
+
         student->registerCourses(Course);
         Course->addStudent(student);
     }
@@ -228,7 +239,106 @@ int main()
     
     switch(choice)
     {
+        case 1:
+        {
+          int id;
+          std::string name;
+          std::cout<<"Enter Student ID: ";
+          std::cin>>id;
+
+          std::cout<<"Enter Student Name: ";
+          std::cin.ignore();
+          std::getline(std::cin,name);
+
+          Student *student=new Student(id,name);
+
+          students.push_back(student);
+
+          std::cout<<"Student Added Successfully"<<std::endl;
+
+          break;
+        }
         
+        case 2:
+        {
+            int id;
+            std::string name;
+            int duration;
+            double fees;
+
+            std::cout<<"Enter Course Id: ";
+            std::cin>>id;
+
+            std::cout<<"Enter Course Name: ";
+            std::cin.ignore();
+            std::getline(std::cin,name);
+
+            std::cout<<"Enter Duration(months): ";
+            std::cin>>duration;
+
+            std::cout<<"Enter Course Fees: ";
+            std::cin>>fees;
+
+            Course *course=new Course(id,name,duration,fees);
+
+            courses.push_back(course);
+
+            std::cout<<"Course Added Successfully"<<std::endl;
+
+            break;
+        }
+
+        case 3:
+        {
+            int studentID;
+            int courseID;
+
+            std::cout<<"Enter Student Id: ";
+            std::cin>>studentID;
+
+            std::cout<<"Enter Course Id: ";
+            std::cin>>courseID;
+
+            Student *student=NULL;
+            Course *course=NULL;
+
+            for(std::vector<Student*>::iterator it=students.begin();
+                 it!=students.end();it++)
+                 {
+                    if((*it)->getstudentID()==studentID)
+                    {
+                        student=*it;
+                        break;
+
+                    }
+                 }
+
+            for(std::vector<Course*>::iterator it=courses.begin();
+                 it!=courses.end();it++)
+                 {
+                    if((*it)->getcourseID()==studentID)
+                    {
+                        course=*it;
+                        break;
+
+                    }
+                 }     
+
+            try
+            {
+                admissions.registerStudent(student,course);
+                std::cout<<"Registration Successful"<<std::endl;
+            }
+            catch(const AcademyException& e)
+            {
+                std::cout <<"Error: "<< e.what() <<std::endl;;
+            }
+                 
+           break;
+
+        }
+
+
     }
 
     return 0;
