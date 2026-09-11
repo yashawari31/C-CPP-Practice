@@ -213,6 +213,12 @@ class PaymentException : public AcademyException
     }
 };
 
+class InvalidPaymentException: public AcademyException
+{
+    public:
+    InvalidPaymentException():AcademyException("Invalid Payment Method!"){}
+};
+
 int main()
 {
     std::vector<Student*>students;
@@ -337,6 +343,128 @@ int main()
            break;
 
         }
+
+        case 4:
+        {
+            if(courses.empty())
+            {
+                std::cout<<"No Courses available"<<std::endl;
+            }
+            else
+            {
+                for(std::vector<Course*>::iterator it=courses.begin();it!=courses.end();it++)
+                {
+                    (*it)->displayBatch();
+                    std::cout<<"------------------------"<<std::endl;
+                }
+            }
+
+            break;
+        }
+
+        case 5:
+         
+        {
+            int studentId;
+            std::cout<<"Enter Student ID: ";
+            std::cin>>studentId;
+
+            Student *student=NULL;
+
+            for(std::vector<Student*>::iterator it=students.begin();
+                 it!=students.end();it++)
+                 {
+                    if((*it)->getstudentID()==studentId)
+                    {
+                        student=*it;
+                        break;
+
+                    }
+                 }
+
+                 try
+                 {
+                    if(student==NULL)
+                    {
+                    throw InvalidStudentException();
+                    }
+
+                    double total=student->calculateFees();
+                    std::cout<<"Total Fees: "<<total<<std::endl;
+                 }
+
+
+                 catch(const std::exception& e)
+                 {
+                    std::cout<<"Error: " << e.what() << '\n';
+                 }
+                 
+
+            break;
+        }
+
+        case 6:
+         {
+                int studentId;
+            std::cout<<"Enter Student ID: ";
+            std::cin>>studentId;
+
+            Student *student=NULL;
+
+            for(std::vector<Student*>::iterator it=students.begin();
+                 it!=students.end();it++)
+                 {
+                    if((*it)->getstudentID()==studentId)
+                    {
+                        student=*it;
+                        break;
+
+                    }
+                 }
+
+                 try
+                 {
+                    if(student==NULL)
+                    {
+                        throw InvalidStudentException();
+                    }
+
+                    double total=student->calculateFees();
+                    std::cout<<"Total Fees: "<<total<<std::endl;
+
+                    int paymentChoice;
+                    std::cout<<"\n1.Online Payment"<<std::endl;
+                    std::cout<<"2.Cash Payment"<<std::endl;
+                    std::cout<<"Enter Payment Method: ";
+                    std::cin>>paymentChoice;
+
+                    Payment *payment=NULL;
+
+                    if(paymentChoice==1)
+                    {
+                        payment=new OnlinePayment(total);
+                    }
+                    else if(paymentChoice==2)
+                    {
+                        payment=new CashPayment(total);
+                    }
+                    else
+                    {
+                        throw InvalidPaymentException();
+                    }
+
+                    payment->processPayment();
+
+                    delete payment;
+                    payment=NULL;
+                 }
+                 catch(AcademyException &e)
+                 {
+                    std::cout<<"Error: "<<e.what()<<std::endl;
+                 }
+
+                 break;
+         }
 
 
     }
